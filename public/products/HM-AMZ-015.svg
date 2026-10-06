@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+    <rect width="600" height="600" fill="#111"/>
+    <rect x="35" y="35" width="530" height="530" fill="#171717" stroke="#e50914" stroke-width="3"/>
+    <text x="300" y="260" fill="#fff" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" font-weight="900">MUSCLE</text>
+    <text x="300" y="315" fill="#e50914" text-anchor="middle" font-family="Arial Black,Arial" font-size="42" font-weight="900">WORRIOR</text>
+    <text x="300" y="380" fill="#aaa" text-anchor="middle" font-family="Arial" font-size="18">POWER MASS GAINER</text>
+    <text x="300" y="415" fill="#666" text-anchor="middle" font-family="Arial" font-size="16">2.72KG • HM-AMZ-015</text>
+    </svg>
