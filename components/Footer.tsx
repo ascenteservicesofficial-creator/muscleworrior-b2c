@@ -8,7 +8,7 @@ export default function Footer() {
  return <footer className="site-footer">
   <div className="container footer-grid">
    <div>
-    <img className="footer-logo" src="/brand/logo.webp" alt="Muscle Worrior" />
+    <img className="footer-logo" src="/logo-placeholder.svg" alt="Muscle Worrior" />
     <p>Premium sports nutrition for training-focused lifestyles.</p>
     <a className="social-link facebook-link" href="https://www.facebook.com/profile.php?id=61593065662230" target="_blank" rel="noreferrer" aria-label="Muscle Worrior on Facebook">
       <FacebookIcon /><span>Facebook</span>
