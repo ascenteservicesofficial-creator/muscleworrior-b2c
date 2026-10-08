@@ -69,3 +69,5 @@ footer{background:#fff;color:#171717;animation:footerReveal .9s .35s cubic-bezie
 .facebook-link:hover{border-color:var(--red);color:var(--red)!important}
 .facebook-icon{width:18px;height:18px;fill:currentColor;display:block}
 @media(max-width:650px){.site-hero-carousel{min-height:160px}.site-hero-static{min-height:140px}.site-hero-dots{bottom:12px}.site-hero-dots button{width:24px}.site-hero-dots button.active{width:40px}}
+
+.policy-page{max-width:1000px}.policy-page>h1{font-size:64px;margin:8px 0}.policy-note{color:#777}.policy-page .info-card{margin-top:30px}.policy-page .info-card h2{font-size:38px;margin-top:0}.policy-page .info-card h3{font-size:22px;margin-top:28px}.policy-page .info-card p,.policy-page .info-card li{color:#666;line-height:1.8}.policy-page .info-card ul{padding-left:22px}
