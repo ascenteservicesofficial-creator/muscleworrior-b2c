@@ -15,7 +15,7 @@ export default function Footer() {
     </a>
    </div>
    <div><h4>Explore</h4><Link href="/products">Products</Link><Link href="/about">About Us</Link><Link href="/contact">Contact Us</Link></div>
-   <div><h4>Policies</h4><Link href="/privacy">Privacy Policy</Link><Link href="/refund-return-cancellation">Refund, Return &amp; Cancellation</Link><Link href="/shipping-delivery">Shipping &amp; Delivery</Link><Link href="/terms">Terms &amp; Conditions</Link></div>
+   <div><h4>Policies</h4><Link href="/policies">Privacy Policy</Link><Link href="/policies">Refund, Return &amp; Cancellation</Link><Link href="/policies">Shipping &amp; Delivery</Link><Link href="/policies">Terms &amp; Conditions</Link></div>
    <div><h4>Contact</h4><p>info@muscleworrior.co.in</p><p>+91 959-9466-470</p><p>WhatsApp: +91 959-9466-470</p><p>FSSAI: 12726038000488</p><p>GST: 09AADCH7931B1ZQ</p></div>
   </div>
   <div className="footer-bottom"><strong>Copyright © 2026 Muscleworrior | All Rights Reserved.</strong><strong>Designed &amp; Developed by Himvati Foods Pvt.Ltd</strong></div>
