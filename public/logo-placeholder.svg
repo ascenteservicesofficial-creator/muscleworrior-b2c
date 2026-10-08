@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160"><rect width="640" height="160" rx="18" fill="#fff"/><path d="M28 116V44h18l28 39 28-39h18v72H96V78L74 108 52 78v38z" fill="#111"/><text x="135" y="106" font-family="Arial Black,Arial,sans-serif" font-size="70" font-weight="900" fill="#111">MUSCLE</text><text x="400" y="106" font-family="Arial Black,Arial,sans-serif" font-size="70" font-weight="900" fill="#e50914">W</text><text x="450" y="106" font-family="Arial Black,Arial,sans-serif" font-size="70" font-weight="900" fill="#111">ORRIOR</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+<title id="title">Muscle Worrior</title><desc id="desc">The Right Choice</desc>
+<rect width="900" height="220" rx="18" fill="#fff"/>
+<text x="450" y="112" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="78" font-weight="900" fill="#111" letter-spacing="2">MUSCLE <tspan fill="#e50914">WARRIOR</tspan></text>
+<rect x="305" y="137" width="290" height="3" fill="#e50914"/>
+<text x="450" y="177" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" fill="#111" letter-spacing="8">THE RIGHT CHOICE</text>
+</svg>
