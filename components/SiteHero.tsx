@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const banners = [
-  { src: "/hero-banner-1.jpg", alt: "Muscle Worrior — Build more. Get stronger." },
-  { src: "/hero-banner-2.jpg", alt: "Muscle Worrior — Fuel your gains." },
-  { src: "/hero-banner-3.jpg", alt: "Muscle Worrior — Make every workout count." },
+  { src: "/hero-banner-1.svg", alt: "Muscle Worrior — Build more. Get stronger." },
+  { src: "/hero-banner-2.svg", alt: "Muscle Worrior — Fuel your gains." },
+  { src: "/hero-banner-3.svg", alt: "Muscle Worrior — Make every workout count." },
 ];
 
 export default function SiteHero() {
