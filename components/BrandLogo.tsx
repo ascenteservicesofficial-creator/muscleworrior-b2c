@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function BrandLogo({ className = "" }: { className?: string }) {
-  const [source, setSource] = useState("/brand/logo.webp");
+  const [source, setSource] = useState("/brand/logo-upload.webp");
 
   return (
     <img
