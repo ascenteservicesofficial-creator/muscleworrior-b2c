@@ -11,7 +11,7 @@ export default function BrandLogo({ className = "" }: { className?: string }) {
       src={source}
       alt="Muscle Worrior"
       width={256}
-      height={256}
+      height={224}
       onError={() => {
         if (source !== "/logo-placeholder.svg") setSource("/logo-placeholder.svg");
       }}
