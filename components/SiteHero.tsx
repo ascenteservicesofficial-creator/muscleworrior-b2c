@@ -1,31 +1,46 @@
 "use client";
+
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const banners = [
-  { svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1920 650\">\n<defs><linearGradient id=\"bg\" x2=\"1\" y2=\"1\"><stop stop-color=\"#070707\"/><stop offset=\".7\" stop-color=\"#191919\"/><stop offset=\"1\" stop-color=\"#090909\"/></linearGradient></defs>\n<rect width=\"1920\" height=\"650\" fill=\"url(#bg)\"/><circle cx=\"1570\" cy=\"180\" r=\"390\" fill=\"#e50914\" opacity=\".16\"/>\n<text x=\"90\" y=\"92\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"42\">MUSCLE <tspan fill=\"#e50914\">WARRIOR</tspan></text>\n<text x=\"90\" y=\"145\" fill=\"#e50914\" font-family=\"Arial\" font-size=\"21\" font-weight=\"700\" letter-spacing=\"4\">ANIMAL MASS GAINER</text>\n<text x=\"90\" y=\"275\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"76\">BUILD MORE.</text><text x=\"90\" y=\"355\" fill=\"#e50914\" font-family=\"Arial Black,Arial\" font-size=\"76\">GET STRONGER.</text>\n<text x=\"90\" y=\"400\" fill=\"#cfcfcf\" font-family=\"Arial\" font-size=\"22\">2.72 KG • SERIOUS TRAINING • SERIOUS GAINS</text>\n<rect x=\"90\" y=\"440\" width=\"205\" height=\"48\" rx=\"4\" fill=\"#e50914\"/><text x=\"192\" y=\"472\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"Arial\" font-size=\"16\" font-weight=\"800\">SHOP NOW</text>\n<g transform=\"translate(1420 185)\"><circle cx=\"80\" cy=\"38\" r=\"34\" fill=\"#d8a37b\"/><path d=\"M35 185 Q80 90 125 185 L125 315 L35 315Z\" fill=\"#242424\"/><path d=\"M48 188 Q80 125 112 188 L145 315 L112 315 L80 240 L48 315 L15 315Z\" fill=\"#e50914\"/><path d=\"M35 315 L5 485 L55 485 L80 365 L105 485 L155 485 L125 315Z\" fill=\"#181818\"/><path d=\"M55 140 Q80 110 105 140\" stroke=\"#111\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\"/></g>\n\n<text x=\"1800\" y=\"600\" text-anchor=\"end\" fill=\"#fff\" font-family=\"Arial\" font-size=\"18\" font-weight=\"800\">01 / 03</text></svg>", alt: "Muscle Worrior Animal Mass Gainer — male fitness character" },
-  { svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1920 650\"><defs><linearGradient id=\"bg\" x2=\"1\"><stop stop-color=\"#101010\"/><stop offset=\"1\" stop-color=\"#21170a\"/></linearGradient></defs><rect width=\"1920\" height=\"650\" fill=\"url(#bg)\"/><circle cx=\"1570\" cy=\"180\" r=\"390\" fill=\"#ffb51b\" opacity=\".13\"/>\n<text x=\"90\" y=\"92\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"42\">MUSCLE <tspan fill=\"#e50914\">WARRIOR</tspan></text><text x=\"90\" y=\"145\" fill=\"#ffb51b\" font-family=\"Arial\" font-size=\"21\" font-weight=\"700\" letter-spacing=\"4\">FITNESS FOR EVERYONE</text>\n<text x=\"90\" y=\"275\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"76\">FUEL YOUR</text><text x=\"90\" y=\"355\" fill=\"#e50914\" font-family=\"Arial Black,Arial\" font-size=\"76\">GAINS.</text><text x=\"90\" y=\"400\" fill=\"#cfcfcf\" font-family=\"Arial\" font-size=\"22\">ANIMAL MASS • LEAN MASS + SIZE</text>\n<rect x=\"90\" y=\"440\" width=\"225\" height=\"48\" rx=\"4\" fill=\"#e50914\"/><text x=\"202\" y=\"472\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"Arial\" font-size=\"16\" font-weight=\"800\">SHOP ANIMAL MASS</text>\n\n<g transform=\"translate(1450 185)\"><circle cx=\"80\" cy=\"38\" r=\"32\" fill=\"#c88d6b\"/><path d=\"M42 100 Q80 75 118 100 L130 315 L30 315Z\" fill=\"#e7e7e7\"/><path d=\"M50 105 Q80 80 110 105 L142 220 L115 235 L80 160 L45 235 L18 220Z\" fill=\"#e50914\"/><path d=\"M42 315 L22 475 L65 475 L80 365 L95 475 L138 475 L118 315Z\" fill=\"#242424\"/><path d=\"M52 24 Q80 -2 108 24\" stroke=\"#161616\" stroke-width=\"18\" fill=\"none\" stroke-linecap=\"round\"/></g>\n<text x=\"1800\" y=\"600\" text-anchor=\"end\" fill=\"#fff\" font-family=\"Arial\" font-size=\"18\" font-weight=\"800\">02 / 03</text></svg>", alt: "Muscle Worrior Fitness For Everyone — female fitness character" },
-  { svg: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1920 650\"><rect width=\"1920\" height=\"650\" fill=\"#080808\"/><circle cx=\"1570\" cy=\"180\" r=\"390\" fill=\"#e50914\" opacity=\".16\"/>\n<text x=\"90\" y=\"92\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"42\">MUSCLE <tspan fill=\"#e50914\">WARRIOR</tspan></text><text x=\"90\" y=\"145\" fill=\"#e50914\" font-family=\"Arial\" font-size=\"21\" font-weight=\"700\" letter-spacing=\"4\">TRAIN • CONQUER • REPEAT</text>\n<text x=\"90\" y=\"275\" fill=\"#fff\" font-family=\"Arial Black,Arial\" font-size=\"72\">MAKE EVERY</text><text x=\"90\" y=\"355\" fill=\"#e50914\" font-family=\"Arial Black,Arial\" font-size=\"72\">WORKOUT COUNT.</text><text x=\"90\" y=\"400\" fill=\"#cfcfcf\" font-family=\"Arial\" font-size=\"22\">ANIMAL MASS • YOUR NEXT LEVEL STARTS HERE</text>\n<rect x=\"90\" y=\"440\" width=\"215\" height=\"48\" rx=\"4\" fill=\"#e50914\"/><text x=\"197\" y=\"472\" text-anchor=\"middle\" fill=\"#fff\" font-family=\"Arial\" font-size=\"16\" font-weight=\"800\">START TRAINING</text>\n\n<g transform=\"translate(1450 185)\"><circle cx=\"80\" cy=\"38\" r=\"34\" fill=\"#d8a37b\"/><path d=\"M40 100 Q80 75 120 100 L120 300 L40 300Z\" fill=\"#303030\"/><path d=\"M48 110 L0 55 M112 110 L160 55\" stroke=\"#e50914\" stroke-width=\"18\" stroke-linecap=\"round\"/><path d=\"M40 300 L18 480 M120 300 L142 480\" stroke=\"#191919\" stroke-width=\"42\" stroke-linecap=\"round\"/><path d=\"M0 55 L-35 10 M160 55 L195 10\" stroke=\"#d0d0d0\" stroke-width=\"8\" stroke-linecap=\"round\"/></g>\n<text x=\"1800\" y=\"600\" text-anchor=\"end\" fill=\"#fff\" font-family=\"Arial\" font-size=\"18\" font-weight=\"800\">03 / 03</text></svg>", alt: "Muscle Worrior training — male fitness character" },
+  { src: "/hero-banner-1.webp", fallback: "/hero-banner-1.svg", alt: "Muscle Worrior Animal Mass Gainer — build more, get stronger" },
+  { src: "/hero-banner-2.webp", fallback: "/hero-banner-2.svg", alt: "Muscle Worrior fitness nutrition — fuel your gains" },
+  { src: "/hero-banner-3.webp", fallback: "/hero-banner-3.svg", alt: "Muscle Worrior — train, conquer, repeat" },
 ];
 
 export default function SiteHero() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [active, setActive] = useState(0);
-  const sources = useMemo(() => banners.map((banner) => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(banner.svg)), []);
+  const [failed, setFailed] = useState<number[]>([]);
 
   useEffect(() => {
     if (!isHome) return;
-    const timer = window.setInterval(() => setActive((current) => (current + 1) % banners.length), 5000);
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % banners.length), 5500);
     return () => window.clearInterval(timer);
   }, [isHome]);
 
-  if (!isHome) return <section className="site-hero-static" aria-label="Muscle Worrior promotional banner"><Link href="/products" className="site-hero-link"><img src={sources[0]} alt={banners[0].alt} /></Link></section>;
+  const imageFor = (index: number) => failed.includes(index) ? banners[index].fallback : banners[index].src;
+
+  if (!isHome) {
+    return <section className="site-hero-static" aria-label="Muscle Worrior promotional banner">
+      <Link href="/products" className="site-hero-link">
+        <img src={imageFor(0)} alt={banners[0].alt} onError={() => setFailed((items) => items.includes(0) ? items : [...items, 0])} />
+      </Link>
+    </section>;
+  }
 
   return <section className="site-hero-carousel" aria-label="Muscle Worrior promotional banners">
-    {sources.map((src, index) => <img key={index} src={src} alt={banners[index].alt} className={index === active ? "is-active" : ""} />)}
-    <div className="site-hero-dots">{banners.map((banner, index) => <button key={index} type="button" className={index === active ? "active" : ""} onClick={() => setActive(index)} aria-label={"Show hero banner " + (index + 1)} aria-current={index === active} />)}</div>
+    {banners.map((banner, index) => (
+      <Link href="/products" key={banner.src} className={index === active ? "hero-slide is-active" : "hero-slide"} aria-hidden={index !== active} tabIndex={index === active ? 0 : -1}>
+        <img src={imageFor(index)} alt={banner.alt} onError={() => setFailed((items) => items.includes(index) ? items : [...items, index])} />
+      </Link>
+    ))}
+    <div className="site-hero-dots" aria-label="Choose banner">
+      {banners.map((banner, index) => <button key={banner.src} type="button" className={index === active ? "active" : ""} onClick={() => setActive(index)} aria-label={"Show hero banner " + (index + 1)} aria-pressed={index === active} />)}
+    </div>
     <div className="site-hero-progress"><span key={active} /></div>
   </section>;
 }
