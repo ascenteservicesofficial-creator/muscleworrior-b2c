@@ -3,19 +3,45 @@
 import { useState } from "react";
 
 export default function BrandLogo({ className = "" }: { className?: string }) {
-  const [source, setSource] = useState("/brand/logo-upload.webp");
+  const [sourceIndex, setSourceIndex] = useState(0);
+  const sources = ["/brand/logo.webp", "/brand/logo-upload.webp"];
+
+  if (sourceIndex >= sources.length) {
+    return (
+      <span
+        className={className}
+        role="img"
+        aria-label="Muscle Worrior"
+        style={{
+          display: "inline-block",
+          color: "#111",
+          fontWeight: 900,
+          fontSize: "clamp(14px, 1.5vw, 22px)",
+          lineHeight: 1.05,
+          whiteSpace: "nowrap",
+        }}
+      >
+        MUSCLE <span style={{ color: "#e50914" }}>WORRIOR</span>
+      </span>
+    );
+  }
 
   return (
     <img
       className={className}
-      src={source}
+      src={sources[sourceIndex]}
       alt="Muscle Worrior"
-      width={256}
-      height={224}
-      onError={() => {
-        if (source !== "/logo-placeholder.svg") setSource("/logo-placeholder.svg");
+      width={512}
+      height={448}
+      onError={() => setSourceIndex((index) => index + 1)}
+      style={{
+        display: "block",
+        width: "100%",
+        height: "auto",
+        maxWidth: "100%",
+        objectFit: "contain",
+        objectPosition: "left center",
       }}
-      style={{ display: "block", objectFit: "contain", maxWidth: "100%", height: "auto" }}
     />
   );
 }
