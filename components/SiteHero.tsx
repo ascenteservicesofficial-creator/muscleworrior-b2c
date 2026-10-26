@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const banners = [
-  { src: "/hero-banner-1.webp", fallback: "/hero-banner-1.svg", alt: "Muscle Worrior Animal Mass Gainer — build more, get stronger" },
-  { src: "/hero-banner-2.webp", fallback: "/hero-banner-2.svg", alt: "Muscle Worrior fitness nutrition — fuel your gains" },
-  { src: "/hero-banner-3.webp", fallback: "/hero-banner-3.svg", alt: "Muscle Worrior — train, conquer, repeat" },
+  { src: "/hero-banner-1.svg", fallback: "/hero-banner-1.webp", alt: "Muscle Worrior Animal Mass Gainer — build more, get stronger" },
+  { src: "/hero-banner-2.svg", fallback: "/hero-banner-2.webp", alt: "Muscle Worrior fitness nutrition — fuel your gains" },
+  { src: "/hero-banner-3.svg", fallback: "/hero-banner-3.webp", alt: "Muscle Worrior — train, conquer, repeat" },
 ];
 
 export default function SiteHero() {
